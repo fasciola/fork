@@ -91,3 +91,62 @@ body :is(.bg-white, [class*="bg-white/"], .bg-slate-50, .bg-gray-50) :is(
 body :is(.btn-primary-ff, [class*="bg-primary"], [class*="bg-gold"]) {
   color: #04122c !important;
 }
+
+/* Pricing comparison rows shown on the packages page.
+   These rows use legacy inline/token colors that can override the generic card rules. */
+body :is(.navy-section, .sage-section) :is(
+  .card-ff,
+  [class*="rounded-"][class*="border"]
+):not(.bg-white):not([class*="bg-white/"]) > :is(div, section, article) :is(
+  h1, h2, h3, h4, h5, h6
+) {
+  color: #f8fafc !important;
+  -webkit-text-fill-color: #f8fafc !important;
+}
+
+body :is(.navy-section, .sage-section) :is(
+  .card-ff,
+  [class*="rounded-"][class*="border"]
+):not(.bg-white):not([class*="bg-white/"]) :is(
+  p, li, small, label
+) {
+  color: #cbd5e1 !important;
+  -webkit-text-fill-color: #cbd5e1 !important;
+}
+
+/* Pricing row titles and action links must never inherit dark navy text. */
+body :is(.navy-section, .sage-section) :is(
+  .card-ff,
+  [class*="rounded-"][class*="border"]
+):not(.bg-white):not([class*="bg-white/"]) :is(
+  a, button, [role="link"]
+):not(.btn-primary-ff):not([class*="bg-primary"]):not([class*="bg-gold"]) {
+  color: #bae6fd !important;
+  -webkit-text-fill-color: #bae6fd !important;
+  opacity: 1 !important;
+}
+
+body :is(.navy-section, .sage-section) :is(
+  .card-ff,
+  [class*="rounded-"][class*="border"]
+):not(.bg-white):not([class*="bg-white/"]) :is(
+  a, button, [role="link"]
+):not(.btn-primary-ff):not([class*="bg-primary"]):not([class*="bg-gold"]):hover {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Catch arbitrary Tailwind text colors and inline color declarations in dark pricing rows. */
+body :is(.navy-section, .sage-section) :is(
+  .card-ff,
+  [class*="rounded-"][class*="border"]
+):not(.bg-white):not([class*="bg-white/"]) :is(
+  [class*="text-navy"],
+  [class*="text-ink"],
+  [class*="text-blue-"],
+  [class*="text-indigo-"],
+  [style*="color"]
+):not(a):not(button):not([role="link"]) {
+  color: #f8fafc !important;
+  -webkit-text-fill-color: #f8fafc !important;
+}
