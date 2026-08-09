@@ -1,0 +1,237 @@
+@import '@fontsource/baloo-2/400.css';
+@import '@fontsource/baloo-2/500.css';
+@import '@fontsource/baloo-2/600.css';
+@import '@fontsource/baloo-2/700.css';
+@import '@fontsource/baloo-2/800.css';
+@import '@fontsource/nunito/400.css';
+@import '@fontsource/nunito/500.css';
+@import '@fontsource/nunito/600.css';
+@import '@fontsource/nunito/700.css';
+@import '@fontsource/nunito/800.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Fork & Founders design tokens — organic green direction */
+    --background: 50 33% 97%;           /* Warm paper #FBFAF4 */
+    --foreground: 132 22% 14%;          /* Deep forest ink #1B2A1E */
+    --card: 0 0% 100%;
+    --card-foreground: 132 22% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 132 22% 14%;
+    --primary: 138 34% 21%;             /* Forest #24492F */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 77 47% 90%;            /* Pale sage #EAF1D8 */
+    --secondary-foreground: 138 34% 21%;
+    --muted: 60 12% 94%;                /* Warm grey #F4F4EF */
+    --muted-foreground: 120 8% 38%;
+    --accent: 64 75% 53%;               /* Chartreuse lime #D7E22E */
+    --accent-foreground: 132 22% 14%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 80 14% 87%;
+    --input: 80 14% 85%;
+    --ring: 138 34% 21%;
+    --radius: 1rem;
+
+    /* Brand palette (token names kept stable — values re-directed) */
+    --navy-deep: 139 31% 16%;           /* Forest deep #1C3524 */
+    --navy: 138 34% 21%;                /* Forest #24492F */
+    --ink: 132 22% 14%;                 /* #1B2A1E */
+    --baby-blue: 77 47% 90%;            /* Pale sage #EAF1D8 */
+    --pale-blue: 80 40% 94%;            /* #F3F7E9 */
+    --stone: 68 8% 64%;                 /* #A8AA9B */
+    --gold: 64 75% 53%;                 /* Lime #D7E22E */
+    --gold-dark: 74 49% 28%;            /* Olive (text on light) #5A6B24 */
+    --promo-yellow: 66 79% 57%;         /* Bright lime #DCE83A */
+    --soft-grey: 60 12% 94%;            /* #F4F4EF */
+    --sage: 76 32% 43%;                 /* Hero sage #7D8F4A */
+    --sage-dark: 76 32% 35%;            /* #67743A */
+    --cream: 45 38% 94%;                /* #F7F3E8 */
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 132 22% 14%;
+    --sidebar-primary: 138 34% 21%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 80 40% 94%;
+    --sidebar-accent-foreground: 138 34% 21%;
+    --sidebar-border: 80 14% 87%;
+    --sidebar-ring: 138 34% 21%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: hsl(var(--gold));
+    color: hsl(var(--ink));
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .container-ff {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .eyebrow {
+    @apply font-display text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold-dark))];
+  }
+  .eyebrow-light {
+    @apply font-display text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[hsl(var(--gold))];
+  }
+  .eyebrow-navy {
+    @apply font-display text-[0.72rem] font-bold uppercase tracking-[0.22em] text-[hsl(var(--navy))];
+  }
+  .btn-primary-ff {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[hsl(var(--gold))] px-7 py-3.5 font-display text-sm font-bold text-[hsl(var(--ink))] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105 hover:shadow-[0_16px_32px_-12px_hsl(var(--gold)/0.55)] focus-visible:outline-none;
+  }
+  .btn-secondary-ff {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-[hsl(var(--navy))]/20 bg-transparent px-7 py-3.5 font-display text-sm font-bold text-[hsl(var(--navy))] transition-all duration-300 hover:border-[hsl(var(--navy))] hover:bg-[hsl(var(--pale-blue))] focus-visible:outline-none;
+  }
+  .btn-gold-ff {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[hsl(var(--navy))] px-7 py-3.5 font-display text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[hsl(var(--navy-deep))] hover:shadow-[0_16px_32px_-12px_hsl(var(--navy)/0.45)] focus-visible:outline-none;
+  }
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/35 px-7 py-3.5 font-display text-sm font-bold text-white transition-all duration-300 hover:border-white hover:bg-white/10 focus-visible:outline-none;
+  }
+  /* Circular arrow chip used inside pill CTAs */
+  .btn-chip {
+    @apply -me-3 ms-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[hsl(var(--ink))] text-[hsl(var(--gold))] transition-transform duration-300;
+  }
+  .btn-chip-light {
+    @apply -me-3 ms-1 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-[hsl(var(--navy))] transition-transform duration-300;
+  }
+  .card-ff {
+    @apply rounded-[1.75rem] border border-border bg-card p-7 shadow-[0_1px_3px_rgba(27,42,30,0.05)] transition-all duration-300;
+  }
+  .card-ff-hover {
+    @apply hover:-translate-y-1 hover:border-[hsl(var(--navy))]/20 hover:shadow-[0_24px_48px_-20px_rgba(28,53,36,0.28)];
+  }
+  .section-pad {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(120deg, #eef77a 0%, hsl(var(--gold)) 55%, #c9d82e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .link-underline {
+    @apply relative font-bold text-[hsl(var(--navy))] after:absolute after:-bottom-0.5 after:left-0 after:h-[3px] after:w-full after:origin-right after:scale-x-0 after:rounded-full after:bg-[hsl(var(--gold))] after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100;
+  }
+  .navy-section {
+    background:
+      radial-gradient(1200px 600px at 85% -10%, hsl(var(--gold) / 0.14), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, hsl(var(--sage) / 0.35), transparent 55%),
+      hsl(var(--navy-deep));
+  }
+  .sage-section {
+    background:
+      radial-gradient(1000px 500px at 90% 0%, rgba(255, 255, 255, 0.14), transparent 55%),
+      hsl(var(--sage));
+  }
+  /* Hand-drawn swoosh underline for key heading words */
+  .swoosh {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 22' fill='none'%3E%3Cpath d='M4 15C60 7 150 4 216 9' stroke='%23D7E22E' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 100% 0.32em;
+    padding-bottom: 0.18em;
+  }
+  .swoosh-olive {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 22' fill='none'%3E%3Cpath d='M4 15C60 7 150 4 216 9' stroke='%235A6B24' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 100% 0.32em;
+    padding-bottom: 0.18em;
+  }
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[hsl(var(--gold))] focus:px-5 focus:py-3 focus:font-display focus:text-sm focus:font-bold focus:text-[hsl(var(--ink))];
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Baloo 2', ui-rounded, ui-sans-serif, system-ui, sans-serif; }
+  .font-body { font-family: 'Nunito', ui-sans-serif, system-ui, sans-serif; }
+  .text-balance { text-wrap: balance; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* RTL support */
+[dir='rtl'] .rtl-mirror { transform: scaleX(-1); }
+[dir='rtl'] { letter-spacing: 0; }
+[dir='rtl'] h1, [dir='rtl'] h2, [dir='rtl'] h3, [dir='rtl'] h4 { letter-spacing: 0; }
+
+/* Marquee for trust strip */
+@keyframes ff-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-ff-marquee { animation: ff-marquee 36s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-ff-marquee { animation: none; }
+}
+
+/* Gentle float for floating badge cards */
+@keyframes ff-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-ff-float { animation: ff-float 5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-ff-float { animation: none; }
+}
+
+/* Slow rotation for doodle scribbles */
+@keyframes ff-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-ff-spin-slow { animation: ff-spin-slow 26s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-ff-spin-slow { animation: none; }
+}
+
+/* Subtle reveal defaults handled by framer-motion; this is the no-JS fallback */
+.ff-img-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.75rem;
+}
+.ff-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ff-img-frame:hover img { transform: scale(1.04); }
