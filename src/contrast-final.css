@@ -1,0 +1,93 @@
+/* Final contrast layer for the navy theme.
+   Loaded last so legacy blue/ink utility classes cannot make copy disappear. */
+
+/* Dark cards and panels: use white headings, light-gray copy and light-blue links. */
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.bg-white):not([class*="bg-white/"]) {
+  color: #f8fafc;
+}
+
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.bg-white):not([class*="bg-white/"]) :is(
+  h1, h2, h3, h4, h5, h6, strong,
+  [class*="font-bold"], [class*="font-semibold"],
+  [class*="font-extrabold"], [class*="font-black"]
+) {
+  color: #f8fafc !important;
+}
+
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.bg-white):not([class*="bg-white/"]) :is(
+  p, li, small, label, dt, dd,
+  [class*="text-sm"], [class*="text-xs"]
+) {
+  color: #cbd5e1 !important;
+}
+
+/* Make all text links and inline CTAs visible on dark surfaces. */
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.bg-white):not([class*="bg-white/"]) a,
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.bg-white):not([class*="bg-white/"]) button:not(.btn-primary-ff):not([class*="bg-primary"]):not([class*="bg-gold"]) {
+  color: #7cc8ff !important;
+}
+
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.bg-white):not([class*="bg-white/"]) a:hover,
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.bg-white):not([class*="bg-white/"]) button:not(.btn-primary-ff):not([class*="bg-primary"]):not([class*="bg-gold"]):hover {
+  color: #d9efff !important;
+}
+
+/* Explicitly neutralize legacy dark-blue text utilities on the dark site. */
+body :is(
+  .text-navy,
+  .text-navy-deep,
+  .text-ink,
+  .text-blue-950,
+  .text-blue-900,
+  .text-blue-800,
+  .text-indigo-950,
+  .text-indigo-900
+) {
+  color: #f8fafc !important;
+}
+
+body a:is(
+  .text-navy,
+  .text-navy-deep,
+  .text-ink,
+  .text-blue-950,
+  .text-blue-900,
+  .text-blue-800,
+  .text-indigo-950,
+  .text-indigo-900
+),
+body button:is(
+  .text-navy,
+  .text-navy-deep,
+  .text-ink,
+  .text-blue-950,
+  .text-blue-900,
+  .text-blue-800,
+  .text-indigo-950,
+  .text-indigo-900
+) {
+  color: #7cc8ff !important;
+}
+
+/* Large prices and figures. */
+body :is(
+  [class*="text-2xl"], [class*="text-3xl"], [class*="text-4xl"],
+  [class*="text-5xl"], [class*="text-6xl"]
+) {
+  color: #f8fafc;
+}
+
+/* Keep intentional light cards and light-blue buttons readable. */
+body :is(.bg-white, [class*="bg-white/"], .bg-slate-50, .bg-gray-50) {
+  color: #0f172a;
+}
+
+body :is(.bg-white, [class*="bg-white/"], .bg-slate-50, .bg-gray-50) :is(
+  h1, h2, h3, h4, h5, h6, p, span, small, strong, a, button
+) {
+  color: #0f172a !important;
+}
+
+body :is(.btn-primary-ff, [class*="bg-primary"], [class*="bg-gold"]) {
+  color: #04122c !important;
+}
