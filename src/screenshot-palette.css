@@ -194,3 +194,83 @@ body {
 ) {
   color: rgb(226 232 240 / 0.78) !important;
 }
+
+/* --------------------------------------------------------------------------
+   Targeted fixes for audience, process, solution and pricing sections
+   -------------------------------------------------------------------------- */
+
+/* Cards on dark backgrounds: headings, copy, recommendation labels and CTAs. */
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) {
+  color: hsl(var(--card-foreground));
+}
+
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) :is(
+  h1, h2, h3, h4, h5, h6, p, small, strong, em, li, dt, dd
+) {
+  color: inherit;
+}
+
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) :is(a, button) {
+  color: hsl(var(--primary)) !important;
+}
+
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) :is(a, button):hover {
+  color: #d9efff !important;
+}
+
+/* Keep descriptive paragraphs light gray instead of near-black. */
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) p {
+  color: rgb(203 213 225) !important;
+}
+
+/* Recommendation text and small metadata. */
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) :is(
+  [class*="text-xs"], [class*="text-sm"]
+) {
+  color: rgb(191 219 254) !important;
+}
+
+/* Prices, large figures and stage numbers must remain highly visible. */
+:is(.navy-section, .sage-section) :is(
+  [class*="text-2xl"],
+  [class*="text-3xl"],
+  [class*="text-4xl"],
+  [class*="text-5xl"],
+  [class*="text-6xl"],
+  [class*="font-black"],
+  [class*="font-extrabold"]
+) {
+  color: #f8fafc !important;
+}
+
+/* Standard bold headings and labels on dark panels. */
+:is(.navy-section, .sage-section) :is(
+  h1, h2, h3, h4, h5, h6,
+  [class*="font-bold"],
+  [class*="font-semibold"]
+) {
+  color: #f8fafc;
+}
+
+/* Process-stage cards are intentionally white; preserve their dark labels/numbers. */
+:is(.navy-section, .sage-section) :is(.bg-white, [class*="bg-white/"]) :is(
+  h1, h2, h3, h4, h5, h6, p, span, small, strong, a, button
+) {
+  color: #0f172a !important;
+}
+
+:is(.navy-section, .sage-section) :is(.bg-white, [class*="bg-white/"]) :is(svg, .lucide) {
+  color: #0f172a;
+  stroke: currentColor;
+}
+
+/* Primary light-blue proposal buttons keep dark, readable text. */
+:is(.navy-section, .sage-section) :is(.btn-primary-ff, [class*="bg-primary"], [class*="bg-gold"]) {
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+/* Separators and card borders should remain visible without overpowering text. */
+:is(.navy-section, .sage-section) :is(hr, [role="separator"]) {
+  border-color: hsl(var(--border));
+  background-color: hsl(var(--border));
+}
