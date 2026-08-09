@@ -1,0 +1,86 @@
+/* Screenshot-matched Fork & Founders palette.
+   Loaded after index.css so these values become the single visual source of truth. */
+
+:root {
+  --background: 218 83% 9%;             /* #04122C */
+  --foreground: 210 40% 98%;            /* #F8FAFC */
+
+  --card: 218 60% 13%;                  /* #0D1B34 */
+  --card-foreground: 210 40% 98%;
+  --popover: 218 60% 13%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 205 100% 74%;              /* #7CC8FF */
+  --primary-foreground: 218 83% 9%;
+  --secondary: 218 70% 21%;             /* #102D5C */
+  --secondary-foreground: 210 40% 98%;
+  --muted: 218 45% 18%;                 /* #192B4A */
+  --muted-foreground: 215 20% 72%;
+  --accent: 217 91% 60%;                /* #3B82F6 */
+  --accent-foreground: 210 40% 98%;
+
+  --border: 216 38% 27%;
+  --input: 216 38% 27%;
+  --ring: 205 100% 74%;
+
+  --navy-deep: 218 83% 9%;              /* #04122C */
+  --navy: 219 83% 16%;                  /* #071D49 */
+  --ink: 218 83% 9%;                    /* dark text on blue/light buttons */
+  --baby-blue: 205 100% 74%;            /* #7CC8FF */
+  --pale-blue: 218 70% 21%;              /* #102D5C */
+  --stone: 215 20% 72%;
+  --gold: 205 100% 74%;                 /* screenshot light-blue highlight */
+  --gold-dark: 217 91% 60%;             /* screenshot royal-blue accent */
+  --promo-yellow: 210 40% 98%;
+  --soft-grey: 218 45% 18%;
+  --sage: 218 70% 21%;
+  --sage-dark: 218 60% 13%;
+  --cream: 219 83% 16%;
+
+  --sidebar-background: 218 83% 9%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-primary: 205 100% 74%;
+  --sidebar-primary-foreground: 218 83% 9%;
+  --sidebar-accent: 218 70% 21%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 216 38% 27%;
+  --sidebar-ring: 205 100% 74%;
+}
+
+body {
+  background: #04122c;
+  color: #f8fafc;
+}
+
+.card-ff {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22), 0 18px 50px -32px rgba(59, 130, 246, 0.55);
+}
+
+.card-ff-hover:hover {
+  box-shadow: 0 26px 58px -28px rgba(59, 130, 246, 0.6);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, #d9efff 0%, #7cc8ff 48%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navy-section {
+  background:
+    radial-gradient(1100px 540px at 86% -8%, rgba(124, 200, 255, 0.13), transparent 60%),
+    radial-gradient(850px 480px at -8% 108%, rgba(59, 130, 246, 0.16), transparent 58%),
+    #04122c;
+}
+
+.sage-section {
+  background:
+    radial-gradient(900px 460px at 90% 0%, rgba(124, 200, 255, 0.12), transparent 55%),
+    #071d49;
+}
+
+.swoosh,
+.swoosh-olive {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 22' fill='none'%3E%3Cpath d='M4 15C60 7 150 4 216 9' stroke='%237CC8FF' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
+}
