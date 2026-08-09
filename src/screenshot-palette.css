@@ -1,0 +1,276 @@
+/* Screenshot-matched Fork & Founders palette.
+   Loaded after index.css so these values become the single visual source of truth. */
+
+:root {
+  --background: 218 83% 9%;             /* #04122C */
+  --foreground: 210 40% 98%;            /* #F8FAFC */
+
+  --card: 218 60% 13%;                  /* #0D1B34 */
+  --card-foreground: 210 40% 98%;
+  --popover: 218 60% 13%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 205 100% 74%;              /* #7CC8FF */
+  --primary-foreground: 218 83% 9%;
+  --secondary: 218 70% 21%;             /* #102D5C */
+  --secondary-foreground: 210 40% 98%;
+  --muted: 218 45% 18%;                 /* #192B4A */
+  --muted-foreground: 215 22% 78%;
+  --accent: 217 91% 60%;                /* #3B82F6 */
+  --accent-foreground: 210 40% 98%;
+
+  --border: 216 38% 32%;
+  --input: 216 38% 24%;
+  --ring: 205 100% 74%;
+
+  --navy-deep: 218 83% 9%;              /* #04122C */
+  --navy: 219 83% 16%;                  /* #071D49 */
+  --ink: 218 83% 9%;                    /* dark text on light controls only */
+  --baby-blue: 205 100% 74%;            /* #7CC8FF */
+  --pale-blue: 218 70% 21%;             /* #102D5C */
+  --stone: 215 22% 78%;
+  --gold: 205 100% 74%;                 /* screenshot light-blue highlight */
+  --gold-dark: 205 100% 78%;            /* readable accent text on navy */
+  --promo-yellow: 210 40% 98%;
+  --soft-grey: 218 45% 18%;
+  --sage: 218 70% 21%;
+  --sage-dark: 218 60% 13%;
+  --cream: 219 83% 16%;
+
+  --sidebar-background: 218 83% 9%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-primary: 205 100% 74%;
+  --sidebar-primary-foreground: 218 83% 9%;
+  --sidebar-accent: 218 70% 21%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 216 38% 32%;
+  --sidebar-ring: 205 100% 74%;
+}
+
+body {
+  background: #04122c;
+  color: #f8fafc;
+}
+
+.card-ff {
+  color: hsl(var(--card-foreground));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22), 0 18px 50px -32px rgba(59, 130, 246, 0.55);
+}
+
+.card-ff-hover:hover {
+  box-shadow: 0 26px 58px -28px rgba(59, 130, 246, 0.6);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, #d9efff 0%, #7cc8ff 48%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navy-section {
+  color: hsl(var(--foreground));
+  background:
+    radial-gradient(1100px 540px at 86% -8%, rgba(124, 200, 255, 0.13), transparent 60%),
+    radial-gradient(850px 480px at -8% 108%, rgba(59, 130, 246, 0.16), transparent 58%),
+    #04122c;
+}
+
+.sage-section {
+  color: hsl(var(--foreground));
+  background:
+    radial-gradient(900px 460px at 90% 0%, rgba(124, 200, 255, 0.12), transparent 55%),
+    #071d49;
+}
+
+.swoosh,
+.swoosh-olive {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 22' fill='none'%3E%3Cpath d='M4 15C60 7 150 4 216 9' stroke='%237CC8FF' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* --------------------------------------------------------------------------
+   Dark-surface contrast protection
+   -------------------------------------------------------------------------- */
+
+:is(body, .navy-section, .sage-section, footer) :is(
+  h1, h2, h3, h4, h5, h6, p, li, dt, dd, label, legend, small, strong, em
+) {
+  color: inherit;
+}
+
+:is(.navy-section, .sage-section, footer, .card-ff) :is(
+  svg, .lucide, [data-icon], [class*="icon"]
+) {
+  color: currentColor;
+  stroke: currentColor;
+}
+
+:is(.navy-section, .sage-section, footer, .card-ff) :is(
+  .text-black,
+  .text-slate-950,
+  .text-slate-900,
+  .text-gray-950,
+  .text-gray-900,
+  .text-zinc-950,
+  .text-zinc-900,
+  .text-neutral-950,
+  .text-neutral-900,
+  .text-stone-950,
+  .text-stone-900
+) {
+  color: hsl(var(--foreground)) !important;
+}
+
+:is(.navy-section, .sage-section, footer, .card-ff) :is(
+  .fill-black,
+  .fill-slate-900,
+  .fill-gray-900,
+  .fill-zinc-900,
+  .fill-neutral-900
+) {
+  fill: currentColor !important;
+}
+
+:is(.navy-section, .sage-section, footer, .card-ff) :is(
+  .stroke-black,
+  .stroke-slate-900,
+  .stroke-gray-900,
+  .stroke-zinc-900,
+  .stroke-neutral-900
+) {
+  stroke: currentColor !important;
+}
+
+:is(.navy-section, .sage-section, footer, .card-ff) .text-muted-foreground {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+:is(.navy-section, .sage-section, footer, .card-ff) :is(a, button) svg {
+  color: inherit;
+  stroke: currentColor;
+}
+
+:is(.navy-section, .sage-section, footer) :is(input, textarea, select) {
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--input) / 0.72);
+  border-color: hsl(var(--border));
+}
+
+:is(.navy-section, .sage-section, footer) :is(input, textarea)::placeholder {
+  color: hsl(var(--muted-foreground));
+  opacity: 1;
+}
+
+:is(.navy-section, .sage-section, footer) .btn-secondary-ff,
+:is(.navy-section, .sage-section, footer) .btn-ghost-light {
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--foreground) / 0.32);
+}
+
+:is(.navy-section, .sage-section, footer) .btn-secondary-ff:hover,
+:is(.navy-section, .sage-section, footer) .btn-ghost-light:hover {
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--foreground) / 0.09);
+  border-color: hsl(var(--foreground) / 0.55);
+}
+
+/* Preserve intentional dark copy and icons inside genuinely light surfaces. */
+:is(.bg-white, [class*="bg-white/"], .bg-slate-50, .bg-gray-50) {
+  color: #0f172a;
+}
+
+:is(.bg-white, [class*="bg-white/"], .bg-slate-50, .bg-gray-50) :is(
+  h1, h2, h3, h4, h5, h6, p, li, label, small, strong, svg, .lucide, [data-icon]
+) {
+  color: inherit;
+  stroke: currentColor;
+}
+
+/* Improve small-copy readability without changing the visual hierarchy. */
+:is(.navy-section, .sage-section, footer) :is(
+  .text-white\/40,
+  .text-white\/50,
+  .text-white\/60
+) {
+  color: rgb(226 232 240 / 0.78) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Targeted fixes for audience, process, solution and pricing sections
+   -------------------------------------------------------------------------- */
+
+/* Cards on dark backgrounds: headings, copy, recommendation labels and CTAs. */
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) {
+  color: hsl(var(--card-foreground));
+}
+
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) :is(
+  h1, h2, h3, h4, h5, h6, p, small, strong, em, li, dt, dd
+) {
+  color: inherit;
+}
+
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) :is(a, button) {
+  color: hsl(var(--primary)) !important;
+}
+
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) :is(a, button):hover {
+  color: #d9efff !important;
+}
+
+/* Keep descriptive paragraphs light gray instead of near-black. */
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) p {
+  color: rgb(203 213 225) !important;
+}
+
+/* Recommendation text and small metadata. */
+:is(.navy-section, .sage-section) :is(.card-ff, [class*="rounded-"][class*="border"]) :is(
+  [class*="text-xs"], [class*="text-sm"]
+) {
+  color: rgb(191 219 254) !important;
+}
+
+/* Prices, large figures and stage numbers must remain highly visible. */
+:is(.navy-section, .sage-section) :is(
+  [class*="text-2xl"],
+  [class*="text-3xl"],
+  [class*="text-4xl"],
+  [class*="text-5xl"],
+  [class*="text-6xl"],
+  [class*="font-black"],
+  [class*="font-extrabold"]
+) {
+  color: #f8fafc !important;
+}
+
+/* Standard bold headings and labels on dark panels. */
+:is(.navy-section, .sage-section) :is(
+  h1, h2, h3, h4, h5, h6,
+  [class*="font-bold"],
+  [class*="font-semibold"]
+) {
+  color: #f8fafc;
+}
+
+/* Process-stage cards are intentionally white; preserve their dark labels/numbers. */
+:is(.navy-section, .sage-section) :is(.bg-white, [class*="bg-white/"]) :is(
+  h1, h2, h3, h4, h5, h6, p, span, small, strong, a, button
+) {
+  color: #0f172a !important;
+}
+
+:is(.navy-section, .sage-section) :is(.bg-white, [class*="bg-white/"]) :is(svg, .lucide) {
+  color: #0f172a;
+  stroke: currentColor;
+}
+
+/* Primary light-blue proposal buttons keep dark, readable text. */
+:is(.navy-section, .sage-section) :is(.btn-primary-ff, [class*="bg-primary"], [class*="bg-gold"]) {
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+/* Separators and card borders should remain visible without overpowering text. */
+:is(.navy-section, .sage-section) :is(hr, [role="separator"]) {
+  border-color: hsl(var(--border));
+  background-color: hsl(var(--border));
+}
