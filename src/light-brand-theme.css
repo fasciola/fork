@@ -1,0 +1,175 @@
+/* Light Fork & Founders brand theme.
+   Loaded last to replace the previous dark-site overrides with a clean
+   white/soft-gray presentation and navy/charcoal typography. */
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 221 64% 16%;
+  --card: 0 0% 100%;
+  --card-foreground: 221 64% 16%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 221 64% 16%;
+  --primary: 203 88% 72%;
+  --primary-foreground: 221 64% 16%;
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 221 64% 16%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 215 16% 36%;
+  --accent: 220 14% 96%;
+  --accent-foreground: 221 64% 16%;
+  --border: 220 13% 88%;
+  --input: 220 13% 91%;
+  --ring: 203 88% 72%;
+  --soft-grey: 220 14% 96%;
+  --stone: 215 16% 47%;
+}
+
+html,
+body,
+#root {
+  background: #ffffff;
+}
+
+body {
+  color: #26313d;
+}
+
+/* Convert intentionally dark full-width sections to alternating white/gray. */
+body :is(.navy-section, .sage-section) {
+  background: #f4f5f7 !important;
+  color: #071d49 !important;
+}
+
+body :is(.navy-section, .sage-section):nth-of-type(even) {
+  background: #ffffff !important;
+}
+
+/* Replace legacy navy/cream panel utilities with light neutral surfaces. */
+body :is(
+  .bg-navy,
+  .bg-navy-deep,
+  .bg-sage,
+  .bg-sage-dark,
+  .bg-cream,
+  [class*="bg-navy/"],
+  [class*="bg-navy-deep/"],
+  [class*="bg-sage/"],
+  [class*="bg-sage-dark/"],
+  [class*="bg-cream/"]
+) {
+  background-color: #f4f5f7 !important;
+  color: #071d49 !important;
+}
+
+/* Sitewide copy: navy for headings/links, charcoal for body copy. */
+body :is(h1, h2, h3, h4, h5, h6, strong, dt, legend) {
+  color: #071d49 !important;
+  -webkit-text-fill-color: #071d49 !important;
+}
+
+body :is(p, li, dd, label, small) {
+  color: #374151 !important;
+  -webkit-text-fill-color: #374151 !important;
+}
+
+body :is(
+  .text-white,
+  .text-white\/40,
+  .text-white\/50,
+  .text-white\/60,
+  .text-white\/70,
+  .text-white\/80,
+  .text-white\/90,
+  .text-navy,
+  .text-navy-deep,
+  .text-ink
+) {
+  color: #071d49 !important;
+  -webkit-text-fill-color: #071d49 !important;
+}
+
+body .text-muted-foreground {
+  color: #4b5563 !important;
+}
+
+body a:not(.btn-primary-ff),
+body button:not(.btn-primary-ff) {
+  color: #071d49;
+}
+
+/* Cards and bordered panels stay light and readable. */
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.btn-primary-ff) {
+  color: #26313d;
+}
+
+body .card-ff {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+  box-shadow: 0 10px 30px -24px rgba(7, 29, 73, 0.35) !important;
+}
+
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.btn-primary-ff) :is(
+  h1, h2, h3, h4, h5, h6, strong,
+  [class*="font-bold"], [class*="font-semibold"],
+  [class*="font-extrabold"], [class*="font-black"]
+) {
+  color: #071d49 !important;
+  -webkit-text-fill-color: #071d49 !important;
+}
+
+body :is(.card-ff, [class*="rounded-"][class*="border"]):not(.btn-primary-ff) :is(
+  p, li, small, label, dt, dd,
+  [class*="text-sm"], [class*="text-xs"]
+) {
+  color: #374151 !important;
+  -webkit-text-fill-color: #374151 !important;
+}
+
+/* Keep the consultation and primary CTA treatment compact and light. */
+body .btn-primary-ff,
+body [class*="bg-primary"],
+body [class*="bg-gold"] {
+  background-color: #7cc8ff !important;
+  color: #071d49 !important;
+  -webkit-text-fill-color: #071d49 !important;
+  border-color: transparent !important;
+}
+
+body .btn-primary-ff:hover,
+body [class*="bg-primary"]:hover,
+body [class*="bg-gold"]:hover {
+  background-color: #a7dafd !important;
+}
+
+/* Inputs should follow the same light palette. */
+body :is(input, textarea, select) {
+  background-color: #ffffff !important;
+  color: #26313d !important;
+  border-color: #d1d5db !important;
+}
+
+body :is(input, textarea)::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Icons inherit the surrounding navy/charcoal instead of old white overrides. */
+body :is(svg, .lucide, [data-icon]) {
+  color: currentColor;
+  stroke: currentColor;
+}
+
+/* Footer follows the requested light neutral site background. */
+body footer {
+  background: #eef0f2 !important;
+  color: #26313d !important;
+}
+
+body footer :is(h1, h2, h3, h4, h5, h6, strong, a) {
+  color: #071d49 !important;
+  -webkit-text-fill-color: #071d49 !important;
+}
+
+body footer :is(p, li, small, span) {
+  color: #4b5563 !important;
+  -webkit-text-fill-color: #4b5563 !important;
+}
