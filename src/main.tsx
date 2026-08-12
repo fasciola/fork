@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router'
 import './index.css'
 import './screenshot-palette.css'
 import './contrast-final.css'
+import './light-brand-theme.css'
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
