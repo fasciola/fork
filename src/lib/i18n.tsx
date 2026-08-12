@@ -16,7 +16,7 @@ import { FF_EVENTS, trackEvent } from './analytics'
 export type Lang = 'en' | 'ar'
 
 const chromeStrings: Record<string, Record<Lang, string>> = {
-  bookConsultation: { en: 'Book a Consultation', ar: 'احجز استشارة' },
+  bookConsultation: { en: 'Consultation', ar: 'استشارة' },
   findYourPath: { en: 'Find Your Best Path', ar: 'اعثر على مسارك الأنسب' },
   exploreSolutions: { en: 'Explore Our Solutions', ar: 'استكشف حلولنا' },
   solutions: { en: 'Solutions', ar: 'الحلول' },
